@@ -1,0 +1,186 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Universal selector */
+
+*{
+    margin-top:2px;
+    padding: 5px;
+}
+
+
+/* Body styling */
+
+body{
+    background-image: url(img/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'poppins','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:20px;
+    letter-spacing: 2px;
+}
+
+
+/* Header styling */
+
+header{
+    background: linear-gradient(rgb(157, 157, 219),rgb(162, 229, 251),rgb(241, 154, 154),rgb(226, 190, 122),rgb(219, 219, 139));
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    color: white;
+    text-transform: uppercase;
+    line-height: normal;
+    font-weight: bold;
+
+}
+
+
+/* Event card styling */
+
+.eventCard{
+    background-color: rgba(255,255,255,0.8);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid wheat;
+    font-weight: bold;
+}
+
+.eventCard:hover{
+    transform: scale(1.02);
+}
+
+
+/* Grouping selector */
+
+h3, p{
+    color: rgb(54, 31, 110);
+}
+
+
+/* Main heading style */
+
+.mainHeading{
+    background: linear-gradient(to right, rgb(93, 93, 183),skyblue, orange);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+
+/* CTA button styling*/
+
+.cta-button{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.cta-button:hover{
+    background-color: blueviolet;
+}
+
+main{
+    background-color: antiquewhite;
+}
+
+/*Navigation menu*/
+
+.nav{
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+}
+
+.nav li{
+    display: inline-block;
+    margin: 10px;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: blue;
+}
+
+a:hover{
+    color: red;
+}
+
+a:active{
+    color: black;
+}
+
+/*Table Styling*/
+
+table{
+    text-align: center;
+    width:80%;
+    border-collapse: collapse;
+    margin: auto;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+th{
+
+    background-color: #193553;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+
+}
+
+td{
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+}
+
+tr:nth-child(even){
+
+    background-color: #f2f2f2;
+
+}
+
+td:hover{
+    background-color:rgb(77, 240, 237);
+}
+
+.hiddenBox{
+    visibility: hidden;
+}
+
+.noneBox{
+    display: none;
+}
+
+input:focus{
+    outline: 2px solid blue;
+    text-align: center;
+}
+
+
+/*9. Multiple Columns in Text*/
+
+.news{
+    column-count: 2;
+    column-gap:20px;
+    column-rule: 1px solid gray;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    background: linear-gradient(rgb(164, 164, 223),rgb(225, 172, 172),rgb(228, 198, 141),rgb(216, 216, 163));
+    margin-top: 20px;
+}

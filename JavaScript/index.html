@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Local Community Event Portal</h1>
+
+    <!-- Search Event -->
+    <div class="search-section">
+        <input type="text" id="searchInput" placeholder="Search Event By Name">
+    </div>
+
+    <!-- Filter Category -->
+    <div class="filter-section">
+        <label>Select Category :</label>
+        <select id="categoryFilter">
+            <option value="All">All</option>
+            <option value="Music">Music</option>
+            <option value="Dance">Dance</option>
+            <option value="Food">Food</option>
+            <option value="Workshop">Workshop</option>
+        </select>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading">Loading Events...</div>
+
+    <!-- Event Container -->
+    <div id="eventContainer"></div>
+
+    <hr>
+
+    <!-- Registration Form -->
+    <h2>Event Registration Form</h2>
+    <form id="registrationForm">
+        <input type="text" name="userName" placeholder="Enter Name">
+        <br><br>
+        <input type="email" name="email" placeholder="Enter Email">
+        <br><br>
+        <select name="eventName">
+            <option value="">Select Event</option>
+            <option value="Music Fest">Music Fest</option>
+            <option value="Dance Show">Dance Show</option>
+            <option value="Food Festival">Food Festival</option>
+        </select>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Error Message -->
+    <p id="errorMessage"></p>
+    <!-- Success Message -->
+    <p id="successMessage"></p>
+
+    <hr>
+
+    <!-- jQuery Section -->
+    <h2>jQuery Demo</h2>
+    <button id="registerBtn">Show Events</button>
+    <button id="hideBtn">Hide Events</button>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

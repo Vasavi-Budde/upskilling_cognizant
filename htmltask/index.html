@@ -1,0 +1,474 @@
+<!--1. Create the HTML5 Base Template-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local community Event Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header>
+    <h1>Community Event Portal</h1>
+    </header>
+
+
+    <!--2. Navigation and Linking-->
+
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+
+        <!--External link-->
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+
+    <!--3.Welcome Message with Styling and ID/Class-->
+
+
+    <!--Main section-->
+    <main>
+        <!--Home section-->
+        <section id="home">
+
+            <div id="welcomeBanner">
+            <h2 class="highlight">
+                Welcome to our community portal
+            </h2>
+
+            <p>Enjoy our community events</p>
+
+            <span style = 
+            "color:red; 
+            font-weight:bold">
+            Special offer - Free Registration today!!
+            </span>
+        </div>
+        </section>
+
+        <!--Events Section-->
+
+        <section id="events">
+            <h2>Events</h2>
+            <p>All community info Available Here..</p>
+        </section>
+
+        <!--contact section-->
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>contact 123456789 for more details.</p>
+        </section>
+
+    </main>
+
+    <h1 style="
+    text-align: center;
+   background-image: url(img/imag.png);">
+        Community Event Gallery
+    </h1>
+
+
+
+    <!--4.Image Gallery for Community Events-->
+
+
+
+    <table>
+        <tr>
+            <td>
+                <img src="img/dance.png"
+                alt="dance event"
+                title="dance event"
+                class="eventimage">
+                <p>
+                    This is dance event
+                </p>
+            </td>
+
+            <td>
+                <img src="img/food.png"
+                alt="dance event"
+                title="food event"
+                class="eventimage">
+                <p>
+                    This is food event
+                </p>
+            </td>
+
+            <td>
+                <img src="img/meeting.png"
+                alt="meeting event"
+                title="meeting event"
+                class="eventimage">
+                <p>
+                    This is meeting event
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+                <td>
+                <img src="img/music.png"
+                alt="music event"
+                title="music event"
+                class="eventimage">
+                <p>
+                    This is music event
+                </p>
+                </td>
+
+                <td>
+                <img src="img/party.png"
+                alt="party event"
+                title="party event"
+                class="eventimage">
+                <p>
+                    This is party event
+                </p>
+                </td>
+
+                <td>
+                <img src="img/sports.png"
+                alt="sports event"
+                title="sports event"
+                class="eventimage">
+                <p>
+                    This is sports event
+                </p>
+            
+        </tr>
+        
+        
+    </table>
+
+
+
+    <!--5.Event Registration form-->
+
+
+    <section id="registration">
+        <h1 style=
+        "background-image: url(img/imag.png);
+        text-align: center;">Event Registration Form
+        </h1>
+
+        <form onsubmit="showmessage(); return false;">
+            Name :
+            <input type="text" 
+            placeholder="Enter your name"
+            required
+            autofocus><br><br>
+
+            Email :
+            <input type="email"
+            placeholder="Enter your mail id"
+            required><br><br>
+
+            Date :
+            <input type="date"
+            required><br><br>
+
+            Select event :
+            <select required>
+                <option>music</option>
+                <option>food</option>
+                <option>party</option>
+                <option>sports</option>
+                <option>meeting</option>
+            </select><br><br>
+
+            Description :
+            <textarea rows="5"
+                placeholder="Enter your message">
+            </textarea>
+
+            <button type="submit">Register</button>
+
+            <br><br>
+
+            <output id="result"></output>
+
+        </form>
+    </section>
+
+    <script>
+        function showmessage(){
+            document.getElementById("result").value=
+            "You are Successfully Registered"
+        }
+    </script>
+
+
+    <!--6.Event Feedback with Events Handling-->
+
+
+<section id="feedbacksection">
+    <h1 style=
+    "background-image: url(img/imag.png);
+    padding:5px;
+    text-align: center;">Event Feedback</h1>
+
+    <form>
+
+        Phone Number :
+        <input type="number"
+        id="phone"
+        placeholder="Enter your phone number"
+        onblur="validatePhone()">
+
+        <p id="phoneMessage"></p><br>
+
+        <!--Event selection-->
+
+        Select Event :
+        <select onchange="showFee(this.value)">
+            <option value="">Select Event</option>
+            <option value="100">Music</option>
+            <option value="200">dance</option>
+            <option value="300">sports</option>
+            <option value="400">food</option>
+        </select>
+        <p id="feeMessage"></p>
+
+        <!--submit button-->
+
+        <button type="button" onclick="showConfirm()">
+            Submit
+        </button>
+        <p id="confirmMessage"></p>
+
+    </form>
+
+    <!--double click img-->
+
+    <img src="img/music.png"
+    id="eventimage"
+    width="200"
+    ondblclick="enlargeImage()">
+</section>
+
+
+<script>
+    function validatePhone(){
+        let phone = document.getElementById("phone").value;
+        if(phone.length==10){
+            document.getElementById("phoneMessage").innerHTML="Valid phone number";
+        }
+        else{
+            document.getElementById("phoneMessage").innerHTML="Enter 10 digit num";
+        }
+    }
+
+    //show fee
+
+    function showFee(fee){
+        document.getElementById("feeMessage").innerHTML="Event Fee :$" + fee;
+    }
+
+    //button click
+
+    function showConfirm(){
+        document.getElementById("confirmMessage").innerHTML="feedback submitted successfully";
+    }
+
+    //double click
+
+    function enlargeImage(){
+        document.getElementById("eventimage").style.width="400px";
+    }
+
+    //character count
+
+    
+    function countCharacters() {
+
+        let text =
+            document.getElementById("feedback").value;
+
+        document.getElementById("charCount")
+            .innerHTML =
+            "Characters : " + text.length;
+
+    }
+
+</script>
+
+
+
+<!-- Video Invite with Media Events-->
+
+<section id="videoInvite">
+    <h1 style="
+       background-image: url(img/imag.png);
+        text-align: center;
+        padding: 10px;">Promo Video</h1>
+
+        <video width="500"
+        controls
+        oncanplay="videoReady()">
+        <source src="video/promo.mp4" >
+    </video>
+    <p id="videoMessage"></p>
+
+</section>
+
+<script>
+    function videoReady(){
+        document.getElementById("videoMessage").innerHTML="Video is ready to play";
+    }
+</script>
+
+
+
+<!--Saving User Preferences-->
+
+
+    <section id="Preferences">
+
+        <h1 style="
+           background-image: url(img/imag.png);
+            padding:5px;
+            text-align: center;">Save user preferences
+        </h1>
+
+        Select Event :
+        <select id="eventType"
+        onchange="savePreferred()">
+
+        <option value="">Select Event</option>
+        <option value="music">Music</option>
+        <option value="food">Food</option>
+        <option value="sports">Sports</option>
+        <option value="dance">Dance</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="clearPrefernce()">Clear</button>
+
+    </section>
+
+    <script>
+
+        //saving the selected event
+
+        function savePreferred(){
+            let selectedEvent=document.getElementById("eventType").value;
+
+            //save in localstorage
+
+            localStorage.setItem(
+                "preferredEvent",selectedEvent
+            );
+
+            //save in session storage
+
+            sessionStorage.setItem(
+                "temporary",selectedEvent
+            );
+        }
+
+        //Loading selected event automatically
+
+        window.onload =function(){
+
+            let savedEvent=
+            localStorage.getItem("preferredEvent");
+
+            if(savedEvent){
+                document.getElementById("eventType").value=savedEvent;
+            }
+        }
+
+        //clearing saved events
+
+        function clearPrefernce(){
+            localStorage.clear();
+            sessionStorage.clear();
+            alert("your preferences cleared");
+        }
+
+    </script>
+
+
+    <!--9. Geolocation for Event Mapping-->
+
+     <section id="locationSection">
+        <h1 style="
+           background-image: url(img/imag.png);
+            padding:5px;
+            text-align:center">Find nearby Events
+        </h1>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
+        </button>
+
+        <br><br>
+
+        <p id="locationResult"></p>
+     </section>
+
+     <script>
+        
+        //Find location
+
+        function findLocation(){
+
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(
+                    showPosition,
+                    showError,
+                {
+                    enableHighAccuracy:true,
+                    timeout:5000,
+                }
+                );
+            }
+
+            else{
+
+                document.getElementById("locationResult").innerHTML="Geolocation not supported";
+            }
+        }
+
+        //success function
+
+        function showPosition(position){
+            let latitude=position.coords.latitude;
+            let longitude=position.coords.longitude;
+            document.getElementById("locationResult").innerHTML=
+            "Latitude : "+latitude + " <br> Longitude : "+longitude;
+        }
+
+        //error function
+
+        function showError(error){
+            if(error.code == 1){
+                document.getElementById("locationResult").innerHTML="permission denied";
+            }
+
+            else if(error.code==2){
+                document.getElementById("locationResult").innerHTML="Location unavaiable";
+            }
+
+            else if(error.code==3){
+                document.getElementById("locationResult").innerHTML="Request timeout";
+            }
+        }
+     </script>
+
+
+    <!--Footer Section-->
+    <footer>
+        <p>&copy; community Event Portal</p>
+    </footer>
+</body>
+</html>
